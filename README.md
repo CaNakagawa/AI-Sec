@@ -11,6 +11,10 @@ Suggested flow: plan requirements before implementation, test specific controls 
 
 Skills and prompts guide an AI assistant; they do not enforce technical permissions, isolate agents, or certify an application as secure. Enforce access boundaries in the application, infrastructure, and tools.
 
+## Interactive labs
+
+- [`labs/idor-lab/`](labs/idor-lab/README.md) — Cloudflare Worker + D1 IDOR laboratory for workshops. Each participant gets an isolated sandbox with fictional notes, plus vulnerable and protected authorization modes. Includes API tests and deployment instructions; intentionally **not** deployed automatically.
+
 ## Contributing
 
 New topic areas should live in their own top-level directory and include a short README describing scope, references, and limitations. Keep examples synthetic and do not commit credentials, private notes, or production data.
