@@ -18,11 +18,3 @@ New topic areas should live in their own top-level directory and include a short
 ## License
 
 This repository is licensed under the MIT License. See [LICENSE](LICENSE).
-
----
-
-# AI-Sec (Português)
-
-Coleção crescente de recursos práticos sobre cibersegurança em IA. **AppSec** é a primeira área; temas futuros podem ser adicionados em seções separadas, como DataSec, ModelSec e segurança de redes.
-
-As skills orientam o assistente, mas não impõem permissões técnicas, isolam agentes nem certificam que uma aplicação está segura. Os limites precisam ser aplicados pela aplicação, infraestrutura e ferramentas.
