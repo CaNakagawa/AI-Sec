@@ -1,0 +1,14 @@
+{
+  "name": "ai-sec-idor-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "test": "node --test test/*.test.js",
+    "db:local": "wrangler d1 migrations apply ai-sec-idor-lab --local",
+    "db:remote": "wrangler d1 migrations apply ai-sec-idor-lab --remote",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": { "wrangler": "^4.0.0" }
+}
