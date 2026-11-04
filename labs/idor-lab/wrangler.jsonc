@@ -1,0 +1,18 @@
+{
+  "name": "ai-sec-idor-lab",
+  "main": "src/index.js",
+  "compatibility_date": "2026-11-04",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*", "/notes/*"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "ai-sec-idor-lab",
+      "database_id": "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+    }
+  ],
+  "triggers": { "crons": ["0 * * * *"] }
+}
