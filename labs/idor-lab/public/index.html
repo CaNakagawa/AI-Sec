@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="same-origin">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Broken Access Control | AI-Sec Lab</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar"><a class="brand" href="/" aria-label="AI-Sec Lab home"><span class="brand-mark">⚡</span> AI–SEC <span class="brand-muted">/ LAB 01</span></a><span class="tag">EDUCATIONAL SANDBOX · NOT A REAL ACCOUNT</span></header>
+    <main>
+      <section class="hero">
+        <div class="eyebrow">BROKEN ACCESS CONTROL · IDOR</div>
+        <h1>The app works.<br><span>Can it keep a secret?</span></h1>
+        <p>You're signed in as <strong>Alex</strong>. Create a demo note, then try changing a note ID in the URL. Compare what happens when the server checks ownership—and when it doesn't.</p>
+      </section>
+      <div class="notice"><strong>Sandbox rules:</strong> All accounts and starting notes are fictional. Each visitor gets an isolated sandbox; other visitors' notes are never accessible. Enter <strong>synthetic text only</strong>—no passwords or personal data.</div>
+      <section class="workspace" aria-label="Interactive IDOR challenge">
+        <aside class="sidebar">
+          <div class="panel-heading">CURRENT SESSION <span class="online">● LIVE</span></div>
+          <div class="profile"><div class="avatar">A</div><div><strong>Alex</strong><small>Signed-in demo user</small></div></div>
+          <div class="panel-heading spaced">SECURITY MODE</div>
+          <div class="mode-switch" role="group" aria-label="Authorization mode"><button id="vulnerable" class="mode active" type="button">🔓 Vulnerable</button><button id="protected" class="mode" type="button">🔒 Protected</button></div>
+          <p class="tiny">Both modes enforce isolation between attendees. Only the ownership check changes.</p>
+          <div class="panel-heading spaced">YOUR NOTES</div>
+          <div id="list" class="note-list" aria-live="polite"></div>
+        </aside>
+        <div class="editor">
+          <div class="editor-toolbar"><span class="label">HTTP REQUEST</span><code id="request-path">GET /api/notes/…</code><span id="http-badge" class="status">—</span></div>
+          <div class="editor-content"><label class="panel-heading" for="url-id">TRY AN ID</label><div class="id-row"><span class="prefix">/notes/</span><input id="url-id" type="number" min="1" step="1" inputmode="numeric" placeholder="note ID"><button id="open-note" type="button">Open note ↗</button></div>
+          <div class="sample">Try the fictional <strong>Sam</strong> note: <button id="sam-hint" type="button" class="link-button">Loading…</button></div>
+          <div id="output" class="output" aria-live="polite"><span class="muted">Loading sandbox…</span></div>
+          <div class="divider"></div><label class="panel-heading" for="new-note">CREATE YOUR OWN DEMO NOTE</label><form id="create-note"><textarea id="new-note" rows="3" maxlength="240" placeholder="Example: Buy more coffee for the office (fictional demo text only)" required></textarea><div class="form-bottom"><small>Up to 240 characters · no real personal data</small><button type="submit">Save note +</button></div></form></div>
+        </div>
+      </section>
+      <section class="lesson"><div><span class="step">01</span><strong>AUTHENTICATION</strong><p>Who made the request? Alex.</p></div><div><span class="step">02</span><strong>AUTHORIZATION</strong><p>Does Alex own the requested note?</p></div><div><span class="step">03</span><strong>VERIFY</strong><p>Same URL. Different server-side result.</p></div></section>
+      <footer>Powered by Cloudflare Workers + D1. Deliberately vulnerable <em>inside the sandbox only</em>. Do not use real data.</footer>
+    </main>
+  </div>
+</body>
+</html>
